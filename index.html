@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+
+
+    <!-- CSS Reset : BEGIN -->
+<style>
+html,
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    background: #f1f1f1;
+}
+
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* What it does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table,
+td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+
+/* What it does: Fixes webkit padding issue. */
+table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    /*margin: 0 auto !important;*/
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+    -ms-interpolation-mode:bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+a {
+    text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+*[x-apple-data-detectors],  /* iOS */
+.unstyle-auto-detected-links *,
+.aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.im {
+    color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+img.g-img + div {
+    display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+    u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+
+</style>
+
+<!-- CSS Reset : END -->
+
+<!-- Progressive Enhancements : BEGIN -->
+<style>
+
+  .primary{
+	background: #0d0cb5;
+}
+.bg_white{
+	background: #ffffff;
+}
+.bg_light{
+	background: #ffffff;
+}
+.bg_black{
+	background: #000000;
+}
+.bg_dark{
+	background: rgba(0,0,0,.8);
+}
+.email-section{
+
+}
+
+/*BUTTON*/
+.btn{
+	padding: 5px 15px;
+	display: inline-block;
+}
+.btn.btn-primary{
+	border-radius: 5px;
+	background: #0d0cb5;
+	color: #ffffff;
+}
+.btn.btn-white{
+	border-radius: 5px;
+	background: #ffffff;
+	color: #000000;
+}
+.btn.btn-white-outline{
+	border-radius: 5px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+@font-face {
+    font-family: Patua One;
+    src: url("PatuaOne-Regular.otf");
+}
+h1{
+    font-family: "Patua One", serif;
+    color: #032a4e;
+    margin: 0;
+    font-weight: 500;
+
+}
+ .prijsA {
+     font-family: "Patua One", serif;
+ }
+p{
+    color: #032a4e;
+}
+
+body{
+	font-family: 'Arial', sans-serif;
+
+    color: #032a4e;
+
+
+    font-weight: bold;
+}
+
+a{
+	color: #0d0cb5;
+}
+
+table{
+}
+/*LOGO*/
+
+.logo h1{
+	margin: 0;
+}
+.logo h1 a{
+	color: #000000;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Poppins', sans-serif;
+}
+
+.navigation{
+	padding: 0;
+}
+.navigation li{
+	list-style: none;
+	display: inline-block;;
+	margin-left: 5px;
+	font-size: 15px;
+	font-weight: 500;
+}
+.navigation li a{
+	color: rgba(0,0,0,1);
+}
+
+/*HERO*/
+.hero{
+	position: relative;
+	z-index: 0;
+}
+.hero .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	background: #000000;
+	z-index: -1;
+	opacity: .3;
+}
+.hero .icon{
+}
+.hero .icon a{
+	display: block;
+	width: 60px;
+	margin: 0 auto;
+}
+.hero .text{
+	color: rgba(20, 20, 20,1);
+}
+.hero .text h2{
+	color: #ffffff;
+	font-size: 20px;
+	margin-bottom: 0;
+}
+  .hero .text p{
+      font-size: 13px;
+      margin: 0em;
+  }
+
+
+/*HEADING SECTION*/
+.heading-section{
+}
+.heading-section h2{
+	color: #000000;
+
+	margin: 30px;
+	line-height: 1.4;
+	font-weight: 700;
+
+}
+.heading-section .subheading{
+	margin-bottom: 20px !important;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(0,0,0,.4);
+	position: relative;
+}
+.heading-section .subheading::after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #0d0cb5;
+	margin: 0 auto;
+}
+
+.heading-section-white{
+	color: rgba(255,255,255,.8);
+}
+.heading-section-white h2{
+	font-family: 
+	line-height: 1;
+	padding-bottom: 0;
+}
+.heading-section-white h2{
+	color: #ffffff;
+}
+.heading-section-white .subheading{
+	margin-bottom: 0;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+}
+
+
+.icon{
+	text-align: center;
+}
+.icon img{
+}
+
+
+/*SERVICES*/
+.services{
+	background: rgba(0,0,0,.03);
+}
+.text-services{
+	padding: 10px 10px 0; 
+	text-align: center;
+}
+.text-services h3{
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.services-list{
+	padding: 0;
+	margin: 0 0 20px 0;
+	width: 100%;
+	float: left;
+}
+
+.services-list img{
+	float: left;
+}
+.services-list .text{
+	width: calc(100% - 60px);
+	float: right;
+}
+.services-list h3{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.services-list p{
+	margin: 0;
+}
+
+/*BLOG*/
+.text-services .meta{
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+/*TESTIMONY*/
+.text-testimony .name{
+	margin: 0;
+}
+.text-testimony .position{
+	color: rgba(0,0,0,.3);
+
+}
+
+
+/*VIDEO*/
+.img{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.img .icon{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin-top: -25px;
+}
+.img .icon a{
+	display: block;
+
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+    .product{
+        margin-bottom: 50px;
+    }
+
+    .product h1{
+        font-size: 16px;
+        margin: 0;
+    }
+    .product h2{
+        font-size: 12px;
+        margin: 0;
+    }
+    .product h3{
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .product p{
+        font-size: 10px;
+        color: black;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    .productimage{
+
+        float: left;
+        margin-right: 10px;
+    }
+
+    .prijs{
+        background-color:#b9d9fa;
+
+    }
+
+    .prijzen{
+
+    }
+    .prijzen h1{
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .prijzen p{
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .totaal{
+        float: right;
+        font-family: "Patua One", serif;
+    }
+
+    .details{
+        background-color: #e4edf7;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .details h1{
+        font-size: 16px;
+    }
+
+    .details h2{
+        font-size: 12px;
+    }
+
+    .details p{
+        font-size: 11px;
+        float: right;
+     }
+
+    .documenten{
+
+
+        width: 40px;
+    }
+
+    .methode{
+        color: #000000;
+    }
+
+    .methode p{
+        margin:0;
+    }
+
+    .head h2{
+        font-size: 15px;
+        margin:0;
+    }
+
+    .container{
+        font-size: 13px;
+        padding: 15px;
+
+
+    }
+
+    .list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+     }
+
+    .item {
+        font-weight: normal;
+          float: left;
+          margin: 10px;
+          font-size: 9px;
+        color: white;
+      }
+
+    .info{
+
+    }
+
+    .info h1{
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .info p{
+        font-weight: normal;
+        line-height: 15px;
+    }
+
+
+/*COUNTER*/
+.counter{
+	width: 100%;
+	position: relative;
+	z-index: 0;
+}
+.counter .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	background: #000000;
+	z-index: -1;
+	opacity: .3;
+}
+.counter-text{
+	text-align: center;
+}
+.counter-text .num{
+	display: block;
+	color: #ffffff;
+	font-size: 34px;
+	font-weight: 700;
+}
+.counter-text .name{
+	display: block;
+	color: rgba(255,255,255,.9);
+	font-size: 13px;
+}
+
+
+/*FOOTER*/
+
+.footer{
+	color: rgba(255,255,255,.5);
+
+}
+.footer .heading{
+	color: #ffffff;
+	font-size: 20px;
+}
+.footer ul{
+	margin: 0;
+	padding: 0;
+}
+.footer ul li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+.footer ul li a{
+	color: rgba(255,255,255,1);
+}
+
+
+@media screen and (max-width: 500px) {
+
+	.icon{
+		text-align: left;
+	}
+
+	.text-services{
+		padding-left: 0;
+		padding-right: 20px;
+		text-align: left;
+	}
+
+}
+</style>
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
+	<center style="width: 100%; background-color: #ffffff;">
+    <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <div style="max-width: 600px; margin: 0 auto;" class="email-container">
+    	<!-- BEGIN BODY -->
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+      	<tr>
+          <td valign="top" class="bg_white" style="padding: 1em 2.5em;">
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+          			<td width="40%" class="logo" style="text-align: left;">
+			            <img  style="height: 46px" src="images/Logo-advies+Kies.svg">
+			          </td>
+			          <td width="60%" class="logo" style="text-align: right;">
+			            <ul class="navigation">
+			            	<li style="font-weight: normal; font-size: 13px"><a href="#">Webversie ></a></li>
+
+			            </ul>
+			          </td>
+          		</tr>
+          	</table>
+          </td>
+	      </tr><!-- end tr -->
+				<tr>
+          <td valign="middle" class="hero bg_white" style="background-color: #1173cb; height: 100px;">
+            <table style="margin: 30px">
+            	<tr><img style="float: right;width: 200px;margin-top: 25px" src="images/animatie-aan-de-slag.gif">
+            		<td>
+            			<div class="text" style=" text-align: left;">
+
+            				<h1 style="font-size: 23px; color: white; font-weight: normal;margin-bottom: 5px">Bedankt Erwin van Hensbergen</h1>
+
+                            <p style="font-size: 12px">Fijn dat je hebt gekozen voor Advies en Kies. </br> Je kunt vanaf nu inloggen en je pakket(ten) inzien.</p>
+
+
+
+
+	                  </div>
+
+            		</td>
+            	</tr>
+            </table>
+          </td>
+	      </tr><!-- end tr -->
+	      <tr>
+		      <td class="bg_white">
+		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+		          <tr>
+		            <td class="bg_white email-section">
+		            	<div class="pakketten head container">
+                            <h1 style="margin: 15px; font-size: 16px; font-weight: normal" >Dit heb je besteld</h1>
+                            <hr>
+                            <div>
+                                <div class="product">
+                                    <img src="https://via.placeholder.com/100x150" class="productimage">
+                                    <h1 style="color: #65774c">AOV Compleet</h1>
+                                    <h2 style="font-size: 13px; color: #7ab528">Pakket met advies, bemiddeling en nazorg</h2>
+                                    <hr>
+                                    <h3>AOV Compleet</h3>
+                                    <p class="prijsA" style="float: right">69,50</p>
+                                    <p>12 Maandtermijnen van:</p>
+
+                                    <hr>
+                                    <h3>Adviseur op locatie</h3>
+                                    <p class="prijsA" style="float: right">15,00</p>
+                                    <p>12 Maandtermijnen van:</p>
+                                    <hr>
+
+                                    <h3 style="opacity: 50%">Servicecontract ( Reeds afgesloten )</h3>
+                                    <p class="prijsA" style="float: right; opacity: 50%; text-decoration: line-through">12,50</p>
+                                    <p style="opacity: 50%">AOV Beheer p/m</p>
+
+                                </div>
+                                <div class="product">
+                                    <img src="https://via.placeholder.com/100x150" class="productimage">
+                                    <h1 style="color: #784d35">Aansprakelijkheid</h1>
+                                    <h2 style="font-size: 13px; color: #9c735c">Beroepsaanspraakelijkheid</h2>
+                                    <hr>
+                                    <h3>Aansprakelijkheid</h3>
+                                    <p class="prijsA" style="float: right">45,00</p>
+                                    <p>12 Maandtermijnen van:</p>
+
+                                    <hr>
+                                    <h3 style="opacity: 50%">Adviseur op locatie</h3>
+                                    <p class="prijsA" style="float: right; opacity: 50%; text-decoration: line-through">15,00</p>
+                                    <p style="opacity: 50%">MKB totaal p/m</p>
+
+
+
+                                </div>
+
+                            </div>
+
+		            	</div>
+                    </td>
+                  </tr>
+                    <tr>
+                        <td>
+                            <div class="prijs container" style="border-top:1px solid #032a4e">
+                                <div class="prijzen">
+                                    <h1 class="totaal">129,50</h1>
+                                    <h1>12 Maandtermijnen van</h1>
+
+                                    <p style="float: right; margin-top: 5px">0,00</p>
+                                    <p style="margin-top: 5px">Waarvan BTW</p>
+
+                                    <p style="float: right">0,00</p>
+                                    <p>Waarvan assurantiebelasting</p>
+                                    <br>
+                                    <h1 class="totaal">27,50</h1>
+                                    <h1>Daarna per maand</h1>
+                                    <p style="margin-top: 5px; float: right;" class="">0,00</p>
+                                    <p style="margin-top: 5px">Waarvan BTW</p>
+
+                                    <p style="float: right" >0,00</p>
+                                    <p>Waarvan assurantiebelasting</p>
+                                </div>
+
+                            </div>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <div class="methode head container" style="background-color:#e4edf7; margin-bottom: 45px ">
+                            <h1 style="font-size: 15px">Je hebt betaald</h1>
+                            <p style="font-family: 'Patua One',serif; font-weight: 200; font-size: 10px">Met IDeal</p>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="head ">
+                                <h1 style="font-size: 16px; margin-left: 15px;font-weight: normal">Details over je bestelling</h1>
+                                <p style="font-size: 12px;color: #0079e3; margin-left: 15px; margin-bottom: 15px; font-weight: normal">Je kunt alle details over je bestelde pakket(ten) in de volgende bijlage(n) vinden</p>
+
+                                <div class="details container">
+                                    <div>
+
+                                        <p style="font-weight: normal; line-height: 15px">
+                                            <b>De MerkGarage</b><br>
+                                            t.a.v. Erwin van Hensbergen<br>
+                                            Havikskruid 17<br>
+                                            8265 ME Kampen<br>
+
+                                        </p>
+                                        <p style="margin-right: 10px">Factuuradres: </p>
+                                        <h1 style="color:#65774c;">AOV Compleet</h1>
+                                        <h2 style="margin-bottom: 20px; font-size: 13px; color: #7ab528">Pakket met advies, bemiddeling en nazorg</h2>
+                                        <h2 style="color: #65774c; margin-bottom: 20px; font-size: 14px; font-weight: normal">Ordernummer: 456789</h2>
+                                        <hr>
+
+                                        <h1>Bijbehorende documenten</h1>
+
+                                            <table>
+                                                <tr>
+                                                    <td style="vertical-align: center; text-align: center; padding: 5px">
+                                                        <a href="#" >
+                                                            <img src="images/PDF-ico.svg" class="documenten"><br>
+                                                            <p style="">AOV-compleet.pdf</p>
+                                                        </a>
+                                                    </td>
+                                                    <td style="vertical-align: center; text-align: center; padding: 5px">
+                                                        <a href="#" >
+                                                            <img src="images/PDF-ico.svg" class="documenten"><br>
+                                                            <p style="">AOV-compleet.pdf</p>
+                                                        </a>
+                                                    </td>
+                                                    <td style="vertical-align: center; text-align: center; padding: 5px">
+                                                        <a href="#" >
+                                                            <img src="images/PDF-ico.svg" class="documenten"><br>
+                                                            <p style="">AOV-compleet.pdf</p>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                    </div>
+
+
+
+
+                                </div>
+
+                                <div class="details container ">
+                                    <div>
+                                        <p style="font-weight: normal; line-height: 15px">
+                                            <b>De MerkGarage</b><br>
+                                            t.a.v. Erwin van Hensbergen<br>
+                                            Havikskruid 17<br>
+                                            8265 ME Kampen<br>
+                                        </p>
+                                        <p style="margin-right: 10px">Factuuradres: </p>
+                                        <h1 style="color: #784d35">Aansprakelijkheid</h1>
+                                        <h2 style="margin-bottom: 20px; font-size: 13px; color: #9c735c">Beroepsaansprakelijkheid</h2>
+                                        <h2 style="color: #784d35; margin-bottom: 20px; font-size: 14px; font-weight: normal">Ordernummer: 456789</h2>
+                                        <hr>
+
+                                        <h1>Bijbehorende documenten</h1>
+                                        <table>
+                                            <tr>
+                                                <td style="vertical-align: center; text-align: center; padding: 5px">
+                                                    <a href="#">
+                                                        <img src="images/PDF-ico.svg" class="documenten"><br>
+                                                        <p>AOV-compleet.pdf</p>
+                                                    </a>
+                                                </td>
+
+                                                <td style="vertical-align: center; text-align: center; padding: 5px">
+                                                    <a href="#">
+                                                        <img src="images/PDF-ico.svg" class="documenten"><br>
+                                                        <p>AOV-compleet.pdf</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+		            	</table>
+		            </td>
+		          </tr><!-- end: tr -->
+                    <tr>
+                        <td class="container">
+                            <div class="info">
+                                <h1>
+                                    Hoe kan ik nu verder
+                                </h1>
+                                <p style="font-size: 11px">
+                                    Je hebt vanaf nu de mogelijkheid om in te loggen op jouw persoonlijke omgeving van Mijn Advies en Kies. <a href="#" style="text-decoration: underline">Klik hier</a> om in te loggen en aan de slag te gaan met jouw bestelling(en).
+                                </p>
+                            </div>
+
+                            <div  class="info">
+                                <h1>
+                                    Waar vind ik de factuur
+                                </h1>
+                                <p style=" font-size: 11px">
+                                    Je ontvangt de factuur nadat je hebt ingelogd in <a href="#" style="text-decoration: underline">Mijn Advies en Kies</a> en de wijze van betaling hebt gekozen en afgerond. De factuur is ook in deze online omgeving terug te vinden en te downloaden
+                                </p>
+                            </div>
+
+                            <div  class="info">
+                                <h1>
+                                    De service van Advies en Kies
+                                </h1>
+                                <p style=" font-size: 11px">
+                                    Wij doen ons uiterste best om u te verrassen met onze service. Veel klanten hebben dat inmiddels al zo mogen ervaren.
+                                    Het kan natuurlijk dat het een keer misgaat. Mogen we dat dan zo snel mogelijk van je horen? We doen er alles aan, wanneer het blijkt dat wij een fout hebben gemaakt, om dit zo snel mogelijk te herstellen.
+                                    Ben je alsnog niet tevreden over onze geboden oplossing of service? Maak dan gebruik van onze klachtenprocedure. Je vindt deze hier op onze website
+                                </p>
+                            </div>
+                            <div  class="info">
+                                <h1>
+                                    Kan ik de bestelling nog weizigen of annuleren
+                                </h1>
+                                <p style=" font-size: 11px">
+                                    Wil je de bestelling nog wijzigen, neemdan zo snel mogelijk contact met ons op om de wijzigingen dor te geven.
+                                    Wil je de bestelling als consument annuleren? Lees en gebruik dan het formulier voor ontbinding (herroeping) overeenkomst, die je als bijlage bij deze bestelbevestiging hebt ontvangen.
+                                    Deze informatie is ook op onze website beschikbaar. Voor ondernemers die hun bestelling willen annuleren, verwijzen we naar de Algemene Voorwaarden van Advies en Kies BV.
+                                </p>
+                            </div>
+
+                            <div  class="info">
+                                <h1>
+                                    Overige bijlagen
+                                </h1>
+                                <p style=" font-size: 11px">
+                                    <a href="#">Algemene voorwaarden Advies en Kies.pdf</a><br>
+                                    <a href="#">Dienstenwijzer Advies en Kies.pdf</a><br>
+                                    <a href="#">Formulier voor ontbinding (herroeping) overeenkomst.pdf</a>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+		          <tr>
+		            <td  style="text-align:center; background-color: #022b4f;padding: 10px;">
+		            	<div style="  display: inline; width: 100%">
+
+
+                            <p class="item" style="margin-right: 0px"><img style="width: 12px" src="images/check.svg"> <b>100% onafhankelijk</b></p>
+                            <p class="item" style="margin-right: 0px"><img style="width: 12px" src="images/check.svg"> <b>Wij geven advies en jij kiest</b></p>
+                            <p class="item" style="margin-right: 0px"><img style="width: 12px" src="images/check.svg"> <b>Gecertificeerde adviesmethode</b></p>
+                            <p class="item"><img style="width: 12px" src="images/check.svg"> <b>Unieke online dienstverlening</b></p>
+
+
+
+		            	</div>
+		            </td>
+		          </tr><!-- end: tr -->
+		        </table>
+
+		      </td>
+		    </tr><!-- end:tr -->
+      <!-- 1 Column Text + Button : END -->
+      </table>
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+          <br><img src="images/Logo-advies+Kies.svg" style="width: 150px">
+        <p style="font-size: 10px; font-weight: normal">
+            Zwolle Grote Voort 5 / 8041 AM / tel. 0850 212 400<br>
+        Emmeloord Werktuigenweg 13 / 8304 AZ / tel. 0527 630 900<br><br>
+
+
+            Advies en Kies BV is de AFM ingeschreven onder nummer: 12046769<br>
+            en bij de Kamer van Koophandel onder nummer: 74787675<br><br>
+
+        Wil je geen mails meer ontvangen van Advies en Kies op erwin@merkgarage.com?<br>
+            <a href="#">Klik hier om je profiel te updaten</a>  |  <a href="#">Klik hier om je af te melden</a></p>
+      </table>
+
+    </div>
+  </center>
+</body>
+</html>
